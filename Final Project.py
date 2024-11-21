@@ -8,10 +8,12 @@ Team Simul8tors:
 """
 #%% Section 2: Imports
 
-#%% Section 3: Creating Model Using PyWake
+#%% Section 3: Creating Model 1 Using PyWake
 
-#%% Section 4: Creating Model Using Data
+#%% Section 4: Creating Model 2 Using Data
 
-#%% Plotting
+#%% Section 5: Comparison of Models 1 and 2
+
+#%% Section 6: 
 
     
