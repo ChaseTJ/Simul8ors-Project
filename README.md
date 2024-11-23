@@ -4,8 +4,8 @@ Simulating wind turbines using the PyWake Python package
 PyWake Documentation: 
 https://topfarm.pages.windenergy.dtu.dk/PyWake/index.html
 
-Wind Turbine data from:
-https://data.openei.org/submissions/6146
+Turbine Data for validation:
+https://zenodo.org/records/5841834
 
-Wind and Turbine DATA france
-https://zenodo.org/records/10846755
+Turbine Specifications:
+https://www.thewindpower.net/turbine_en_327_senvion_mm92-2050.php
