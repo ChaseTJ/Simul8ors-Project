@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="3130">
+	<name>Kelmarsh_12.3MW_6xSenvion_MM92</name>
+	<Style id="3152">
+		<IconStyle id="3153">
+			<scale>0</scale>
+			<heading>0</heading>
+			<Icon id="3154">
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="3174">
+		<IconStyle id="3175">
+			<scale>0</scale>
+			<heading>0</heading>
+			<Icon id="3176">
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="3196">
+		<IconStyle id="3197">
+			<scale>0</scale>
+			<heading>0</heading>
+			<Icon id="3198">
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="3141">
+		<IconStyle id="3142">
+			<scale>0</scale>
+			<heading>0</heading>
+			<Icon id="3143">
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="3133">
+		<IconStyle id="3135">
+			<heading>0</heading>
+			<Icon id="3136">
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle id="3134">
+			<color>ffffff00</color>
+			<scale>1.2</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="3185">
+		<IconStyle id="3186">
+			<scale>0</scale>
+			<heading>0</heading>
+			<Icon id="3187">
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="3163">
+		<IconStyle id="3164">
+			<scale>0</scale>
+			<heading>0</heading>
+			<Icon id="3165">
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Placemark id="3132">
+		<name>Kelmarsh</name>
+		<styleUrl>#3133</styleUrl>
+		<Point id="3131">
+			<extrude>1</extrude>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-0.9431049999999999,52.40146083333334,250</coordinates>
+		</Point>
+	</Placemark>
+	<Folder id="3137">
+		<name>models</name>
+		<Placemark id="3145">
+			<name>Kelmarsh 1</name>
+			<description>deviceId                               228
+title                           Kelmarsh 1
+site                              Kelmarsh
+longitude                        -0.947133
+latitude                         52.400604
+coordinates         (52.400604, -0.947133)
+manufacturer                       Senvion
+model                                 MM92
+ratedPower                            2050
+labels                          Kelmarsh 1
+hubHeight                             78.5
+rotorDiameter                           92
+nacelleDirection                278.465002
+colladaModel              MM92_hh78.5_rd92
+Name: 228, dtype: object</description>
+			<Model id="3144">
+				<Location>
+					<longitude>-0.947133</longitude>
+					<latitude>52.400604</latitude>
+					<altitude>0</altitude>
+				</Location>
+				<Orientation>
+					<heading>360</heading>
+					<tilt>0</tilt>
+					<roll>0</roll>
+				</Orientation>
+				<Scale>
+					<x>1</x>
+					<y>1</y>
+					<z>1</z>
+				</Scale>
+				<Link id="3146">
+					<href>files/MM92_hh78.5_rd92.dae</href>
+				</Link>
+				<ResourceMap>
+				</ResourceMap>
+			</Model>
+		</Placemark>
+		<Placemark id="3156">
+			<name>Kelmarsh 2</name>
+			<description>deviceId                               229
+title                           Kelmarsh 2
+site                              Kelmarsh
+longitude                        -0.949527
+latitude                         52.402551
+coordinates         (52.402551, -0.949527)
+manufacturer                       Senvion
+model                                 MM92
+ratedPower                            2050
+labels                          Kelmarsh 2
+hubHeight                             78.5
+rotorDiameter                           92
+nacelleDirection                272.577647
+colladaModel              MM92_hh78.5_rd92
+Name: 229, dtype: object</description>
+			<Model id="3155">
+				<Location>
+					<longitude>-0.949527</longitude>
+					<latitude>52.402551</latitude>
+					<altitude>0</altitude>
+				</Location>
+				<Orientation>
+					<heading>360</heading>
+					<tilt>0</tilt>
+					<roll>0</roll>
+				</Orientation>
+				<Scale>
+					<x>1</x>
+					<y>1</y>
+					<z>1</z>
+				</Scale>
+				<Link id="3157">
+					<href>files/MM92_hh78.5_rd92.dae</href>
+				</Link>
+				<ResourceMap>
+				</ResourceMap>
+			</Model>
+		</Placemark>
+		<Placemark id="3167">
+			<name>Kelmarsh 3</name>
+			<description>deviceId                              230
+title                          Kelmarsh 3
+site                             Kelmarsh
+longitude                        -0.94419
+latitude                        52.403834
+coordinates         (52.403834, -0.94419)
+manufacturer                      Senvion
+model                                MM92
+ratedPower                           2050
+labels                         Kelmarsh 3
+hubHeight                            68.5
+rotorDiameter                          92
+nacelleDirection               275.755156
+colladaModel             MM92_hh68.5_rd92
+Name: 230, dtype: object</description>
+			<Model id="3166">
+				<Location>
+					<longitude>-0.94419</longitude>
+					<latitude>52.403834</latitude>
+					<altitude>0</altitude>
+				</Location>
+				<Orientation>
+					<heading>360</heading>
+					<tilt>0</tilt>
+					<roll>0</roll>
+				</Orientation>
+				<Scale>
+					<x>1</x>
+					<y>1</y>
+					<z>1</z>
+				</Scale>
+				<Link id="3168">
+					<href>files/MM92_hh68.5_rd92.dae</href>
+				</Link>
+				<ResourceMap>
+				</ResourceMap>
+			</Model>
+		</Placemark>
+		<Placemark id="3178">
+			<name>Kelmarsh 4</name>
+			<description>deviceId                              231
+title                          Kelmarsh 4
+site                             Kelmarsh
+longitude                        -0.94115
+latitude                        52.398781
+coordinates         (52.398781, -0.94115)
+manufacturer                      Senvion
+model                                MM92
+ratedPower                           2050
+labels                         Kelmarsh 4
+hubHeight                            78.5
+rotorDiameter                          92
+nacelleDirection               275.754269
+colladaModel             MM92_hh78.5_rd92
+Name: 231, dtype: object</description>
+			<Model id="3177">
+				<Location>
+					<longitude>-0.94115</longitude>
+					<latitude>52.398781</latitude>
+					<altitude>0</altitude>
+				</Location>
+				<Orientation>
+					<heading>360</heading>
+					<tilt>0</tilt>
+					<roll>0</roll>
+				</Orientation>
+				<Scale>
+					<x>1</x>
+					<y>1</y>
+					<z>1</z>
+				</Scale>
+				<Link id="3179">
+					<href>files/MM92_hh78.5_rd92.dae</href>
+				</Link>
+				<ResourceMap>
+				</ResourceMap>
+			</Model>
+		</Placemark>
+		<Placemark id="3189">
+			<name>Kelmarsh 5</name>
+			<description>deviceId                               232
+title                           Kelmarsh 5
+site                              Kelmarsh
+longitude                        -0.940537
+latitude                         52.402308
+coordinates         (52.402308, -0.940537)
+manufacturer                       Senvion
+model                                 MM92
+ratedPower                            2050
+labels                          Kelmarsh 5
+hubHeight                             78.5
+rotorDiameter                           92
+nacelleDirection                267.943164
+colladaModel              MM92_hh78.5_rd92
+Name: 232, dtype: object</description>
+			<Model id="3188">
+				<Location>
+					<longitude>-0.940537</longitude>
+					<latitude>52.402308</latitude>
+					<altitude>0</altitude>
+				</Location>
+				<Orientation>
+					<heading>357.9431640765084</heading>
+					<tilt>0</tilt>
+					<roll>0</roll>
+				</Orientation>
+				<Scale>
+					<x>1</x>
+					<y>1</y>
+					<z>1</z>
+				</Scale>
+				<Link id="3190">
+					<href>files/MM92_hh78.5_rd92.dae</href>
+				</Link>
+				<ResourceMap>
+				</ResourceMap>
+			</Model>
+		</Placemark>
+		<Placemark id="3200">
+			<name>Kelmarsh 6</name>
+			<description>deviceId                               233
+title                           Kelmarsh 6
+site                              Kelmarsh
+longitude                        -0.936093
+latitude                         52.400687
+coordinates         (52.400687, -0.936093)
+manufacturer                       Senvion
+model                                 MM92
+ratedPower                            2050
+labels                          Kelmarsh 6
+hubHeight                             68.5
+rotorDiameter                           92
+nacelleDirection                274.246062
+colladaModel              MM92_hh68.5_rd92
+Name: 233, dtype: object</description>
+			<Model id="3199">
+				<Location>
+					<longitude>-0.936093</longitude>
+					<latitude>52.400687</latitude>
+					<altitude>0</altitude>
+				</Location>
+				<Orientation>
+					<heading>360</heading>
+					<tilt>0</tilt>
+					<roll>0</roll>
+				</Orientation>
+				<Scale>
+					<x>1</x>
+					<y>1</y>
+					<z>1</z>
+				</Scale>
+				<Link id="3201">
+					<href>files/MM92_hh68.5_rd92.dae</href>
+				</Link>
+				<ResourceMap>
+				</ResourceMap>
+			</Model>
+		</Placemark>
+	</Folder>
+	<Folder id="3138">
+		<name>markers</name>
+		<Style id="3196">
+			<IconStyle id="3197">
+				<colorMode>normal</colorMode>
+				<scale>0</scale>
+				<heading>0</heading>
+				<Icon id="3198">
+					<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+				</Icon>
+			</IconStyle>
+		</Style>
+		<Placemark id="3140">
+			<name>Kelmarsh 1</name>
+			<styleUrl>#3141</styleUrl>
+			<Point id="3139">
+				<coordinates>-0.947133,52.400604,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="3151">
+			<name>Kelmarsh 2</name>
+			<styleUrl>#3152</styleUrl>
+			<Point id="3150">
+				<coordinates>-0.949527,52.40255100000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="3162">
+			<name>Kelmarsh 3</name>
+			<styleUrl>#3163</styleUrl>
+			<Point id="3161">
+				<coordinates>-0.9441900000000001,52.40383400000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="3173">
+			<name>Kelmarsh 4</name>
+			<styleUrl>#3174</styleUrl>
+			<Point id="3172">
+				<coordinates>-0.9411499999999999,52.398781,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="3184">
+			<name>Kelmarsh 5</name>
+			<styleUrl>#3185</styleUrl>
+			<Point id="3183">
+				<coordinates>-0.9405370000000001,52.402308,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark id="3195">
+			<name>Kelmarsh 6</name>
+			<styleUrl>#3196</styleUrl>
+			<Point id="3194">
+				<coordinates>-0.9360930000000001,52.400687,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
