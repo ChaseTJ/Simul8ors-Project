@@ -14,10 +14,26 @@ from py_wake.site import UniformSite
 from py_wake.literature.noj import Jensen_1983
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.stats import weibull_min
+from py_wake.site import UniformWeibullSite
+from py_wake.site._site import LocalWind
 
 # %% read in real turbine data
 
-turbine_data = pd.read_csv('Kelmarsh_SCADA_2021_3087\Turbine_Data_Kelmarsh_1_2021-01-01_-_2021-07-01_228.csv', skiprows = 9)
+turbine_data_raw = pd.read_csv('Kelmarsh_SCADA_2021_3087\Turbine_Data_Kelmarsh_1_2021-01-01_-_2021-07-01_228.csv', skiprows = 9)
+
+turbine_data = turbine_data_raw[['# Date and time', 'Wind speed (m/s)', 'Wind direction (°)', 'Power (kW)']]
+
+turbine_data = turbine_data.dropna()
+
+# %% Creating a wind probability distribution from the data
+
+wind_speed_data = turbine_data['Wind speed (m/s)'].values  # Replace with your actual data
+# Define wind speed bins and probabilities from the data
+wind_speed_bins = np.linspace(wind_speed_data.min(), wind_speed_data.max(), 20)  # Create bins
+hist, bin_edges = np.histogram(wind_speed_data, bins=wind_speed_bins, density=True)
+wind_speed_probabilities = hist / hist.sum()  # Normalize to probabilities
+wind_speed_bin_midpoints = (bin_edges[:-1] + bin_edges[1:]) / 2  # Calculate midpoints
 
 # %% Defining the turbine
 # Turbine type: Senvion MM92
@@ -37,47 +53,66 @@ power = np.array([
     2050.0, 2050.0, 2050.0
 ])  # Power in kW
 
-
-
 turbine = WindTurbine(name='Senvion MM92',
                     diameter=92.5,
                     hub_height=100, # might vary
                     powerCtFunction=PowerCtTabular(wind_speed,power,'kW',ct))
 
-# %% defining the site
+# %% defining the site - Making custom one to input real wind data
 
-site = UniformSite(p_wd=[1],  # Uniform distribution of wind direction (one direction)
-                   ti=0.1,    # Turbulence intensity
-                   ws=wind_speed)  # Wind speed bins
+class CustomWindSpeedSite(UniformSite):
+    def __init__(self, wind_speed_bins, wind_speed_probabilities, ti=0.1):
+        self.wind_speed_bins = wind_speed_bins
+        self.wind_speed_probabilities = wind_speed_probabilities
+        super().__init__(p_wd=[1], ti=ti)  # Uniform wind direction
 
-# %% defining the wake model
+    def local_wind(self, x_i=None, y_i=None, h_i=None, wd=None, ws=None, time=None):
+        """
+        Override local_wind to provide wind speed bins and probabilities.
+        """
+        # Map x and y positions to wind speed bins (or directly use probabilities)
+        wind_speeds = np.random.choice(
+            self.wind_speed_bin_midpoints,  # Bin midpoints
+            size=len(x_i),
+             p=self.wind_speed_probabilities
+        )
+        return LocalWind(
+            x_i=x_i,
+            y_i=y_i,
+            h_i=h_i,
+            wd=np.zeros_like(x_i),  # Dummy wind direction
+            ws=wind_speeds,         # Assigned wind speeds
+            ti=np.full_like(x_i, self.default_ti)  # Turbulence intensity
+        )
 
-wake_model = Jensen_1983(site, turbine)
+        
+# Create the custom site
+site = CustomWindSpeedSite(wind_speed_bins, wind_speed_probabilities, ti=0.1)
 
-# %% Turbine layout
-
-x = [0, 500]  # X positions (meters)
-y = [0, 0]    # Y positions (meters)
-
-# Specify turbine IDs (optional, but useful for more complex layouts)
-turbine_ids = [0, 1]
 
 # %% Wind farm simulation
 
-simulation_result = wake_model(x, y, wd=270, ws=8)  # wd=270° (west), ws=8 m/s
+turbine_data['Power (kW)'] = np.interp(
+    turbine_data['Wind speed (m/s)'],
+    wind_speed,
+    power
+)
 
-# Extract results
-power_output = simulation_result.aep().sum()  # Annual Energy Production (AEP) in GWh
-print(f"Total Power Output: {power_output:.2f} GWh")
+# Total energy production
+total_energy_output = turbine_data['Power (kW)'].sum() / 1e6  # Convert kWh to GWh
+print(f"Total Energy Output: {total_energy_output:.2f} GWh")
 
 # %% Visualize
 
-flow_map = simulation_result.flow_map()  # Generate the flow map
-fig, ax = plt.subplots()
-flow_map.plot_wake_map(ax=ax)  # Plot wake map
-plt.title("Wake Map for Wind Farm")
-plt.xlabel("x (meters)")
-plt.ylabel("y (meters)")
-plt.show()
+# Plot power output vs. wind speed
+plt.figure(figsize=(8, 5))
+plt.plot(wind_speed, power, label="Power Curve")
+plt.scatter(wind_speed_data, turbine_data['Power (kW)'], label="Real Data", color='red')
+plt.xlabel("Wind Speed (m/s)")
+plt.ylabel("Power Output (kW)")
+plt.title("Power Output vs. Wind Speed")
+plt.legend()
+plt.grid()
+plt.show() 
 
 # %%
