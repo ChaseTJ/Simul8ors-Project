@@ -4,16 +4,7 @@ Simulating wind turbines using the PyWake Python package
 PyWake Documentation: 
 https://topfarm.pages.windenergy.dtu.dk/PyWake/index.html
 
-Turbine Data for validation:
-https://zenodo.org/records/5841834
-
-Turbine Specifications:
-[https://www.thewindpower.net/turbine_en_327_senvion_mm92-2050.php](https://www.thewindpower.net/turbine_en_327_senvion_mm92-2050.php)
-
-Turbine Power and Thrust Coefficient Curves:
-https://eoliennespierredesaurel.com/wp-content/uploads/2015/09/PierreDeSaurel_WindResourceAssessment_20150427_v2.pdf
-
-
+---
 
 # WindFarmSimulator
 
@@ -158,3 +149,18 @@ Handles zooming functionality using the mouse wheel.
 - **Turbine Coordinates in Meters**:
   ```plaintext
   Turbine locations in meters: [(120.0, 30.5), (200.0, 90.3), (350.0, 180.2)]
+
+# Model Validation
+
+Kelmash Wind Turbine Data: https://zenodo.org/records/5841834
+Contained in the Kelmarch_Scada_2021_3087 Folder
+
+Wind Turbine Specifications: https://www.thewindpower.net/turbine_en_327_senvion_mm92-2050.php
+
+Wind Turbine Power and Thrust Coefficient Curves: https://eoliennespierredesaurel.com/wp-content/uploads/2015/09/PierreDeSaurel_WindResourceAssessment_20150427_v2.pdf
+
+Turbine Height and Location data is in doc.kml
+
+Simulation_Validation.py contains the script that validates the turbine specifications. Looks at the data for one turbine
+
+Wake_Model_Validation.py contains the script that validates the PyWake wake model. Simulates the entire site with all 6 turbines.
