@@ -152,7 +152,6 @@ Handles zooming functionality using the mouse wheel.
 1. **Python Libraries**:
    - `Tkinter`: For GUI.
    - `Matplotlib`: For plotting and interaction.
-   - `Pillow`: For image handling.
    - `Numpy`: For numerical computations.
 
 ---
