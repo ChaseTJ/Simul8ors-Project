@@ -65,7 +65,7 @@ ct = np.array([0.98, 0.87, 0.79, 0.79, 0.79, 0.79, 0.74, 0.69, 0.54, 0.39, 0.29,
 power = np.array([20, 94, 205, 391, 645, 979, 1375, 1795, 2000, 2040, 2050, 2050, 2050, 2050, 
                   2050, 2050, 2050, 2050, 2050, 2050, 2050, 2050])  # kW
 
-turbine = WindTurbine(name="Senvion MM92", diameter=92.5, hub_height=100,
+turbine = WindTurbine(name="Senvion MM92", diameter=92.5, hub_height=None,
                       powerCtFunction=PowerCtTabular(wind_speeds, power, 'kW', ct))
 
 # %% Define the Site and Wake Model
@@ -91,7 +91,7 @@ for i, row in data_combined.iloc[::1].iterrows():  # Skip every 50th row for fas
 
     # Simulate the farm for the aggregated wind speeds and directions
     try:
-        simulation_result = wake_model(x=np.array(x), y=np.array(y), wd=wind_directions_array, ws=wind_speeds_array)
+        simulation_result = wake_model(x=np.array(x), y=np.array(y), h=np.array(hub_heights), wd=wind_directions_array, ws=wind_speeds_array)
     except Exception as e:
         print(f"Simulation failed at index {i} with error: {e}")
         continue
