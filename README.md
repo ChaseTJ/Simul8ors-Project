@@ -23,9 +23,7 @@ The `WindFarmSimulator` is a GUI-based Python tool for simulating wind farm layo
 
 ## Features
 1. **Turbine Placement**: Left-click to place turbines on the canvas; right-click to undo the last placement.
-2. **Panning**:
-   - **Mouse**: Press and drag the middle mouse button (roller).
-   - **Keyboard**: Use `W`, `A`, `S`, `D` keys for up, left, down, and right movement.
+2. **Panning**: Use `W`, `A`, `S`, `D` keys for up, left, down, and right movement.
 3. **Zooming**: Scroll up or down with the mouse wheel to zoom in or out centered on the cursor.
 4. **Map Import**: Load a map image as a canvas background.
 5. **Scale Bar Selection**:
