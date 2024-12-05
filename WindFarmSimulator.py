@@ -196,7 +196,7 @@ class WindFarmSimulator:
         
         simulationResult = noj(turbine_x,turbine_y, wd=wd, ws=ws)
         
-        fig1 = plt.figure()
+        plt.figure()
         flow_map = simulationResult.flow_map(ws=ws[0], wd=wd[0])
         flow_map.plot_wake_map()
         aep = '%.2fGWh'%(simulationResult.aep().sum())
