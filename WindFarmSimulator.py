@@ -179,11 +179,11 @@ class WindFarmSimulator:
         else:
             d = 90
     
-        if type == "v80 (2)":
+        if Type == "v80 (2)":
             turbines = V80()
-        elif type == "iea37 (15)":
+        elif Type == "iea37 (15)":
             turbines = IEA37_WindTurbines()
-        if type == "dtu10mw (10)":
+        if Type == "dtu10mw (10)":
             turbines = DTU10MW()
         else:
             turbines = GenericWindTurbine('User', float(D), float(h), power_norm=10000, turbulence_intensity=.1)
