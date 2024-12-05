@@ -204,13 +204,6 @@ class WindFarmSimulator:
         plt.ylabel('y [m]')
         plt.title('Wake map for ' + str(speed) + ' m/s and ' + str(d) + ' degrees, AEP = ' + str(aep))
         plt.show()
-        '''
-
-        graph = FigureCanvasTkAgg(fig1, master = self.canvas_frame)
-        graph_widget = graph.get_tk_widget()
-        graph_widget.place(x=80, y=460, height = 400, width = 650)
-        plt.close()'''
-      
 
     def load_map(self):
         file_path = filedialog.askopenfilename(
