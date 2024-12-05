@@ -8,7 +8,11 @@ https://topfarm.pages.windenergy.dtu.dk/PyWake/index.html
 
 # WindFarmSimulator
 
-The `WindFarmSimulator` is a GUI-based Python tool for simulating wind farm layouts. It provides functionalities for placing turbines, panning, zooming, selecting a scale bar for real-world unit conversion, and exporting turbine coordinates in meters.
+The `WindFarmSimulator` is a GUI-based Python tool for simulating wind farm layouts. It provides functionalities for placing turbines, panning, zooming, selecting a scale bar for real-world unit conversion, and exporting turbine coordinates in meters. It's output is a wake map of the farm, and the annual energy production (AEP) of the farm. Understanding the turbine wind wakes is an important aspect of wind farm production. As wind flows through a turbine, the turbine disrupts the wind and creates a wake. Any turbine behind the first one does not have the original wind speed flowing through it, but instead has the wind of the first turbine's wake. This wake effect cascades through the entire farm, causing each turbine to experience a different wind speed. This wake effect is why computational tools are used to estimate wind farm energy output, rather than calculating each turbine's output from the same general wind speed. 
+
+When running the file, users will see drop down menus on the left. Users can choose values for the wind speed, wind direction, turbine type, turbine hub diameter, and turbine hub height. The turbine type options given are set models within the PyWake library of real-world turbines. The generic option allows the user to use their chosen turbine height and diameter if they wish to use a turbine model that is not listed. 
+
+To use the GUI, first create your wind turbine farm. The functionality of the turbine placement is described below. Note that the axis are labelled in feet, not meters. Then, use the drop down menus to select the turbine presets. After clicking submit, a graph of the wake map and the AEP will be displayed. If the user wants to make any changes, whether that be to the turbine presets or the farm layout, clicking submit after making the changes will reload the graph with the updated presets. 
 
 ---
 
