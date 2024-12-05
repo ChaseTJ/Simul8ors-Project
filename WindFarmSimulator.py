@@ -81,7 +81,7 @@ class WindFarmSimulator:
         description2.pack(pady=5, anchor="w")
 
     def add_dropdowns(self):
-        """Add dropdown menus for wind speed, direction, diameter, and hub height."""
+        """Add dropdown menus for wind speed, direction, type, diameter, and hub height."""
         
         # Wind Speed Dropdown
         label_speed = tk.Label(self.control_frame, text="Select Wind Speed (m/s):", bg="lightgray")
